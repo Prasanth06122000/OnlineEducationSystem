@@ -35,13 +35,13 @@ public class CourseServiceImp implements CourseService{
 		return courseRepository.findAll();
 	}
 
-	@Override
+		@Override
 	public Course searchByName(String name) {
-		if(courseRepository.findByCourseName(name).get()==null)
-		{
-			throw new ResourceNotFoundException("Course not found for name");
-		}
-		return courseRepository.findByCourseName(name).get();
+	    Optional<Course> optionalCourse = courseRepository.findByCourseName(name);
+	    if (optionalCourse.isEmpty()) {
+	        throw new ResourceNotFoundException("Course not found for name: " + name);
+	    }
+	    return optionalCourse.get();
 	}
 
 	@Override
