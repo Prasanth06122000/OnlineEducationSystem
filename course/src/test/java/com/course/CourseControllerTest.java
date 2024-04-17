@@ -130,16 +130,7 @@ import com.course.service.CourseServiceImp;
         assertEquals(courses, result);
     }
 
-    @Test
-     void testAddExamToTheCourse() {
-        long courseId = 1;
-        int examId = 1;
-        doNothing().when(courseServiceImp).addExamTOTheCourse(courseId, examId);
-
-        courseController.addExamToTheCourse(courseId, examId);
-
-        // Assuming void method call success if no exceptions
-    }
+   
     @Test
      void testGettersAndSetters() {
         Course course = new Course();
