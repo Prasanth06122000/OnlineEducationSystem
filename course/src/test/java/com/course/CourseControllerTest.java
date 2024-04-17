@@ -326,7 +326,7 @@ import com.course.service.CourseServiceImp;
         assertEquals("An unexpected error occurred", responseEntity.getBody());
     }
     @Test
-    public void testConstructor() {
+     void testConstructor() {
         // Arrange
         String errorMessage = "Resource not found";
 
