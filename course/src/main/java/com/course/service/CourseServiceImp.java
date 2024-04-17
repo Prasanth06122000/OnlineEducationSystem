@@ -1,17 +1,16 @@
 package com.course.service;
 
 import java.util.List;
-import java.util.Set;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import java.util.Optional;
 
 import com.course.Dao.ExamDao;
 import com.course.dto.ExamDto;
 import com.course.entity.Course;
-import com.course.repositiory.CourseRepository;
 import com.course.exception.ResourceNotFoundException;
+import com.course.repositiory.CourseRepository;
 
 
 @Service
@@ -36,7 +35,7 @@ public class CourseServiceImp implements CourseService{
 		return courseRepository.findAll();
 	}
 
-		@Override
+	@Override
 	public Course searchByName(String name) {
 	    Optional<Course> optionalCourse = courseRepository.findByCourseName(name);
 	    if (optionalCourse.isEmpty()) {
@@ -44,6 +43,7 @@ public class CourseServiceImp implements CourseService{
 	    }
 	    return optionalCourse.get();
 	}
+
 
 	@Override
 	public Course searchById(long id) {
@@ -118,6 +118,11 @@ public class CourseServiceImp implements CourseService{
 		   courseRepository.save(course);
 		   
 	} 
+	
+	
+	
+	
+	
 	
 	
 
